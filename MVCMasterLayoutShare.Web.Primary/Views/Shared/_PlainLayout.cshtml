@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Web Page Design by James Koster - http://www.jameskoster.co.uk -->
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Plain 1.0</title>
+    <link href="~/Content/themes/plain/plain.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <a name="top" id="top"></a>
+
+    <div id="menu">
+        <a href="#top">home</a> <a href="#intro">introduction</a> <a href="#css">css &amp; xhtml</a> <a href="#about">about the author</a>
+    </div>
+
+    <div id="header">
+        <h1>MVCMasterLayoutShare</h1>
+        <h2>We're rockin' and rollin' the Plain template</h2>
+    </div>
+
+    <div id="content">
+
+        <img src="/Content/themes/plain/logo.jpg" alt="Your Logo" class="logo" />
+
+        <p class="introduction">
+            This is an example usage of the master project using the Plain layout. If you're in the secondary application while viewing this - it's worked!
+            You should be able to do most things that you would normally do with a same-project-layout with this shared layout page.
+        </p>
+
+        <div id="sidebar">
+            <h1>Site Links</h1>
+            <div class="submenu">
+                <ul>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+
+            <h1>Log In</h1>
+            @Html.Partial("_LoginPartial")
+        </div>
+
+        <div id="mainbar">
+            @RenderSection("featured", required: false)
+
+            @RenderBody()
+        </div>
+
+    </div>
+    <div id="footer">
+        This is the footer. Put all your copyright info here.<br />
+        Page designed by <a href="http://www.jameskoster.co.uk">James Koster</a>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
