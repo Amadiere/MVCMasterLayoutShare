@@ -7,4 +7,6 @@ For more information on the project, to see any outstanding bugs and feature imp
 https://github.com/Amadiere/MVCMasterLayoutShare
 
 ## Example ##
-TODO: A good example needs to go here.
+Included are two projects:
+MVCMasterLayoutShare.Web.Primary : This is a default "Intranet" MVC4 project with minor modifications and an additional theme.
+MVCMasterLayoutShare.Web.Secondary: This is a default "Empty" MVC4 project with a simple controller & index method which use the theme from the primary project.
