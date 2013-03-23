@@ -1,4 +1,7 @@
-﻿@if (Request.IsAuthenticated) {
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Web.Mvc.Html
+@using System.Web.Mvc
+@if (Request.IsAuthenticated) {
     <text>
         Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {

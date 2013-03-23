@@ -1,11 +1,17 @@
+@inherits System.Web.Mvc.WebViewPage
+@using System.Web.Mvc.Html
+@using System.Web.Mvc
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 <html>
 <head>
     <!-- Web Page Design by James Koster - http://www.jameskoster.co.uk -->
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>Plain 1.0</title>
-    <link href="~/Content/themes/plain/plain.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+    <link href="http://localhost:10067/Content/themes/plain/plain.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -22,7 +28,7 @@
 
     <div id="content">
 
-        <img src="/Content/themes/plain/logo.jpg" alt="Your Logo" class="logo" />
+        <img src="http://localhost:10067/Shared/Content/themes/plain/logo.jpg" alt="Your Logo" class="logo" />
 
         <p class="introduction">
             This is an example usage of the master project using the Plain layout. If you're in the secondary application while viewing this - it's worked!
