@@ -21,15 +21,19 @@ Included are two projects:
 * All the links to CSS/Scripts must work from other projects (e.g. not using project root of `~/`, but things such as `/Shared/` or `http://`.
 * Any view within the master layout project must have: `@inherits System.Web.Mvc.WebViewPage` at the very top.
 * Any view within the master layout project using part of the `@Html` helper functions (or others for that matter), should reference the appropriate DLL at the top - e.g. `@using System.Web.Mvc.Html`.
+* The default `MasterLayoutVirtualDirectory` is 'Shared'. This can be overriden by creating a setting in the web.config within the secondary projects.
 
 ### Secondary projects ###
 
 * Global.asax.cs should contain the following in the `Application_Start`:
 
     `MasterLayoutVirtualPathProvider.Register();`
-
     `ViewEngines.Engines.Add(new MasterLayoutRazorViewEngine());`
 
-* Web.config should contain a setting for the `MasterLayoutPath`:
+* Web.config should contain a setting for the `MasterLayoutPath` (and if required, for the `MasterLayoutVirtualDirectory` also):
 
     `<add key="MasterLayoutPath" value="C:\Users\Alex\Code\MVCMasterLayoutShare\MVCMasterLayoutShare.Web.Primary\" />`
+
+* From here, you should be able to reference images, scripts and stylesheets as normal (via the absolute (local or remote) URL), and now, the views. E.g. if you update your `_ViewStart.cshtml` file to kick things off. You can add something like:
+
+    `Layout = "~/Shared/Views/Shared/_Layout.cshtml";`
